@@ -1,0 +1,18 @@
+{
+  "name": "lapak-gamer-vps-nat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lapak Gamer website + API untuk deployment Node.js VPS NAT",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}

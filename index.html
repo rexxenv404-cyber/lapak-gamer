@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="Lapak Gamer — marketplace komunitas untuk jasa gaming dan produk digital.">
+  <title>LAPAK GAMER — Marketplace Gaming</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Lapak Gamer beranda">
+      <span class="brand-mark">LG<span>✦</span></span>
+      <span class="brand-name">LAPAK<span>GAMER</span><small>MARKETPLACE KOMUNITAS</small></span>
+    </a>
+    <nav class="desktop-nav">
+      <a class="nav-link active" href="#explore">Jelajahi</a>
+      <a class="nav-link" href="#how">Cara Kerja</a>
+      <button class="nav-link" id="adminNav">Panel Admin</button>
+    </nav>
+    <div class="top-actions">
+      <button class="btn btn-ghost compact" id="openLogin">Masuk Admin</button>
+      <button class="btn btn-primary compact" id="sellTop">＋ Pasang Lapak</button>
+      <button class="mobile-menu" id="mobileMenu" aria-label="Buka menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> TEMPATNYA PARA GAMER BERKARYA</div>
+        <h1>LEVEL UP<br>JADI <span class="gradient-text">CUAN.</span></h1>
+        <p>Temukan jasa gaming, aset digital, dan kreator andalan komunitas. Satu lapak, banyak peluang.</p>
+        <div class="hero-actions">
+          <a href="#explore" class="btn btn-primary btn-large">Jelajahi Lapak <span>↗</span></a>
+          <button class="btn btn-outline btn-large" id="sellHero">＋ Buka Lapak</button>
+        </div>
+        <div class="hero-proof">
+          <div class="proof-avatars"><span>🎮</span><span>⚡</span><span>🎨</span></div>
+          <div><strong id="heroListingCount">0+</strong><small>lapak komunitas</small></div>
+          <div class="proof-divider"></div>
+          <div><strong>100%</strong><small>mudah dijelajahi</small></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="hero-console">
+          <div class="console-top"><span class="console-dot"></span><span class="console-dot"></span><span class="console-dot"></span><span class="console-label">GAMING MARKET / ID</span></div>
+          <div class="console-main"><div class="crosshair">✣</div><div class="controller">🎮</div><div class="console-tag">PLAYER<br><b>ONE</b></div></div>
+          <div class="console-bottom"><span>● LIVE COMMUNITY</span><span class="console-score">+ XP</span></div>
+        </div>
+        <div class="float-card float-card-one"><span class="float-icon cyan">✦</span><div><b>Jasa Gaming</b><small>Naikkan rank kamu</small></div><span class="float-arrow">↗</span></div>
+        <div class="float-card float-card-two"><span class="float-icon purple">▧</span><div><b>Digital Assets</b><small>Siap pakai & praktis</small></div><span class="float-arrow">↗</span></div>
+      </div>
+    </section>
+
+    <section class="stats-strip">
+      <div><span class="stat-icon">◈</span><div><strong id="statTotal">0</strong><small>LISTING AKTIF</small></div></div>
+      <div><span class="stat-icon">⌘</span><div><strong id="statServices">0</strong><small>JASA GAMING</small></div></div>
+      <div><span class="stat-icon">▧</span><div><strong id="statDigital">0</strong><small>PRODUK DIGITAL</small></div></div>
+      <div><span class="stat-icon">♧</span><div><strong>Gratis</strong><small>UNTUK MULAI</small></div></div>
+    </section>
+
+    <section class="market-section" id="explore">
+      <div class="section-heading">
+        <div><div class="eyebrow">MARKETPLACE</div><h2>Temukan <span class="gradient-text">Lapak Favoritmu</span></h2><p>Jelajahi layanan dan produk digital dari komunitas gamer.</p></div>
+        <button class="btn btn-outline" id="sellSection">＋ Pasang Lapak</button>
+      </div>
+      <div class="search-row">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Cari jasa, produk, game, atau penjual..." autocomplete="off"><kbd>⌘ K</kbd></label>
+        <select id="sortSelect" class="sort-select" aria-label="Urutkan listing"><option value="newest">Terbaru</option><option value="price-low">Harga terendah</option><option value="price-high">Harga tertinggi</option><option value="popular">Paling populer</option></select>
+      </div>
+      <div class="filter-row" id="categoryFilters">
+        <button class="filter-chip active" data-category="Semua">✦ Semua Lapak</button>
+        <button class="filter-chip" data-category="Jasa Gaming">🎮 Jasa Gaming</button>
+        <button class="filter-chip" data-category="Desain & Editing">🎨 Desain & Editing</button>
+        <button class="filter-chip" data-category="Produk Digital">▧ Produk Digital</button>
+        <button class="filter-chip" data-category="Coaching">⚡ Coaching</button>
+        <button class="filter-chip" data-category="Lainnya">◈ Lainnya</button>
+      </div>
+      <div class="results-bar"><span id="resultsText">Menampilkan semua lapak</span><button class="text-button" id="resetFilters">Reset filter ↺</button></div>
+      <div class="listing-grid" id="listingGrid"></div>
+      <div class="empty-state hidden" id="emptyState"><div class="empty-icon">⌕</div><h3>Lapak belum ditemukan</h3><p>Coba kata kunci atau kategori lain.</p><button class="btn btn-outline" id="emptyReset">Reset pencarian</button></div>
+      <div class="load-more-wrap"><button class="btn btn-outline" id="loadMore">Tampilkan lainnya <span>↓</span></button></div>
+    </section>
+
+    <section class="seller-cta" id="how">
+      <div class="cta-icon">⚡</div><div class="cta-copy"><div class="eyebrow">PUNYA SKILL GAMING?</div><h2>Skill kamu bisa jadi <span class="gradient-text">peluang.</span></h2><p>Pasang jasa atau produk digitalmu dan biarkan komunitas menemukan lapakmu.</p></div>
+      <button class="btn btn-primary btn-large" id="sellBottom">Mulai Pasang Lapak ↗</button>
+    </section>
+    <section class="how-grid">
+      <article><span>01</span><div class="how-icon">✍</div><h3>Isi detail lapak</h3><p>Tulis judul, kategori, harga, deskripsi, dan kontak yang bisa dihubungi.</p></article>
+      <article><span>02</span><div class="how-icon">◈</div><h3>Tampil di marketplace</h3><p>Lapak tersimpan di browser ini dan langsung muncul di daftar setelah dikirim.</p></article>
+      <article><span>03</span><div class="how-icon">↗</div><h3>Hubungi penjual</h3><p>Pembeli menghubungi penjual langsung. Transaksi dilakukan di luar website.</p></article>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand footer-brand" href="#"><span class="brand-mark">LG<span>✦</span></span><span class="brand-name">LAPAK<span>GAMER</span><small>MARKETPLACE KOMUNITAS</small></span></a><p>Tempat komunitas gaming bertumbuh. <span>© <span id="year"></span> LAPAK GAMER</span></p><div><a href="#explore">Jelajahi</a><a href="#how">Cara Kerja</a><button id="footerAdmin">Admin</button></div></footer>
+
+  <!-- Submit listing modal -->
+  <div class="modal-backdrop hidden" id="listingModal" role="dialog" aria-modal="true" aria-labelledby="listingModalTitle">
+    <div class="modal modal-wide"><button class="modal-close" data-close="listingModal" aria-label="Tutup">×</button><div class="modal-kicker">BUAT LAPAK BARU</div><h2 id="listingModalTitle">Tampilkan skill <span class="gradient-text">terbaikmu.</span></h2><p class="modal-intro">Isi informasi dengan jelas supaya calon pembeli mudah menghubungimu.</p>
+      <form id="listingForm" class="form-grid">
+        <label class="field full">Judul lapak *<input name="title" required maxlength="70" placeholder="Contoh: Jasa push rank Mobile Legends"></label>
+        <label class="field">Kategori *<select name="category" required><option value="Jasa Gaming">Jasa Gaming</option><option value="Desain & Editing">Desain & Editing</option><option value="Produk Digital">Produk Digital</option><option value="Coaching">Coaching</option><option value="Lainnya">Lainnya</option></select></label>
+        <label class="field">Game / platform<input name="game" maxlength="40" placeholder="Contoh: Mobile Legends"></label>
+        <label class="field">Harga (Rp) *<input name="price" type="number" min="0" max="999999999" required placeholder="50000"></label>
+        <label class="field">Nama penjual *<input name="seller" required maxlength="40" placeholder="Nama / nama toko"></label>
+        <label class="field">WhatsApp *<input name="contact" required inputmode="tel" maxlength="20" placeholder="628123456789"></label>
+        <label class="field full">Deskripsi *<textarea name="description" required maxlength="500" rows="4" placeholder="Jelaskan apa yang didapat pembeli, estimasi pengerjaan, dan ketentuan..."></textarea><small>Maksimal 500 karakter. Jangan cantumkan password akun.</small></label>
+        <label class="field full">URL gambar (opsional)<input name="image" type="url" placeholder="https://..."><small>Gunakan gambar yang kamu punya hak untuk memakainya. Boleh dikosongkan.</small></label>
+        <label class="check-field full"><input type="checkbox" name="agree" required><span>Saya setuju informasi lapak ditampilkan publik dan tidak memasang layanan ilegal, penipuan, atau barang yang melanggar aturan game.</span></label>
+        <div class="form-actions full"><button type="button" class="btn btn-ghost" data-close="listingModal">Batal</button><button type="submit" class="btn btn-primary">Publikasikan Lapak ↗</button></div>
+      </form>
+      <div class="form-notice hidden" id="listingNotice" role="status"></div>
+    </div>
+  </div>
+
+  <!-- Listing details -->
+  <div class="modal-backdrop hidden" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailTitle"><div class="modal detail-modal"><button class="modal-close" data-close="detailModal" aria-label="Tutup">×</button><div id="detailContent"></div></div></div>
+
+  <!-- Admin login and panel -->
+  <div class="modal-backdrop hidden" id="adminLoginModal" role="dialog" aria-modal="true" aria-labelledby="adminLoginTitle"><div class="modal admin-login"><button class="modal-close" data-close="adminLoginModal" aria-label="Tutup">×</button><div class="admin-lock">⌑</div><div class="modal-kicker">AREA TERBATAS</div><h2 id="adminLoginTitle">Panel <span class="gradient-text">Admin</span></h2><p class="modal-intro">Masukkan kata sandi admin yang disetel pada konfigurasi backend API.</p><form id="adminLoginForm"><label class="field">Kata sandi<input type="password" name="password" required placeholder="Kata sandi admin"></label><p class="form-error hidden" id="adminError">Email atau kata sandi salah.</p><button class="btn btn-primary full-btn" type="submit">Masuk ke Panel →</button></form><small class="security-note">Catatan: panel admin berbasis browser tidak aman untuk data sensitif. Baca README sebelum deploy publik.</small></div></div>
+
+  <div class="modal-backdrop hidden" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminTitle"><div class="modal admin-panel"><button class="modal-close" data-close="adminModal" aria-label="Tutup">×</button><div class="modal-kicker">CONTROL CENTER</div><h2 id="adminTitle">Panel <span class="gradient-text">Admin.</span></h2><div class="admin-stats" id="adminStats"></div><div class="admin-toolbar"><input id="adminSearch" placeholder="Cari listing..."><button class="btn btn-outline compact" id="exportData">Ekspor JSON ↓</button><label class="btn btn-outline compact import-label">Impor JSON ↑<input type="file" id="importData" accept="application/json" hidden></label><button class="btn btn-danger compact" id="clearCustom">Hapus listing buatan</button></div><div id="adminListingTable" class="admin-list"></div><div class="admin-footer"><span>Perubahan disimpan di browser ini.</span><button class="btn btn-ghost compact" id="adminLogout">Keluar Admin</button></div></div></div>
+
+  <div class="toast hidden" id="toast" role="status"></div>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
